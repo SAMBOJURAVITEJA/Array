@@ -1,4 +1,3 @@
-import {Component} from 'react'
 import UserProfile from './components/UserProfile'
 
 import './App.css'
@@ -30,18 +29,16 @@ const userDetailsList = [
   },
 ]
 
-class App extends Component {
-  render() {
-    const element = userDetailsList.map(eachUser => (
-      <UserProfile userDetails={eachUser} key={eachUser.uniqueNo} />
-    ))
-    return (
-      <div className="app-container">
-        <h1 className="title">Users List</h1>
-        <ul className="list-container">{element}</ul>
-      </div>
-    )
-  }
+const App = () => {
+  const element = userDetailsList.map(eachUser => (
+    <UserProfile userDetails={eachUser} key={eachUser.uniqueNo} />
+  ))
+  return (
+    <div className="app-container">
+      <h1 className="title">Users List</h1>
+      <ul className="list-container">{element}</ul>
+    </div>
+  )
 }
 
 export default App
